@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child:
-        Text('ФИО - Павловсий Илья Дмитриевич\nНомер группы - ИКБО-06-2\nНомер студенческого билета - 22И0369n\n',
+        Text('ФИО - Павловский Илья Дмитриевич\nНомер группы - ИКБО-06-22\nНомер студенческого билета - 22И0369\n',
         textAlign: TextAlign.center,
         ),
       ),
