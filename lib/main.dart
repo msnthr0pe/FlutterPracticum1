@@ -51,7 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                ElevatedButton(
+                Container(
+                  padding: EdgeInsets.all(100),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(30)
+                  ),
+                  child: ElevatedButton(
                     onPressed: null,
                     style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(Colors.amber),
@@ -63,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         )
                     ),
                     child: Text("Тестовая кнопка"),
+                  ),
                 )
               ],
             )
