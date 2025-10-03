@@ -48,6 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.amber
                   ),
                 ),
+                const SizedBox(
+                  width: 100,
+                  height: 50,
+                ),
                 ElevatedButton(
                     onPressed: null,
                     style: ButtonStyle(
