@@ -29,6 +29,9 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = const [
     ScreenOne(),
     ScreenTwo(),
+    ScreenThree(),
+    ScreenFour(),
+    ScreenFive(),
   ];
 
   @override
@@ -46,6 +49,9 @@ class _MainScreenState extends State<MainScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Главная"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Поиск"),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Список"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Профиль"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Настройки"),
         ],
       ),
     );
@@ -70,6 +76,39 @@ class ScreenTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text("Экран 2: Поиск", style: TextStyle(fontSize: 24)),
+    );
+  }
+}
+
+class ScreenThree extends StatelessWidget {
+  const ScreenThree({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Экран 3: Список", style: TextStyle(fontSize: 24)),
+    );
+  }
+}
+
+class ScreenFour extends StatelessWidget {
+  const ScreenFour({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Экран 4: Профиль", style: TextStyle(fontSize: 24)),
+    );
+  }
+}
+
+class ScreenFive extends StatelessWidget {
+  const ScreenFive({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Экран 5: Настройки", style: TextStyle(fontSize: 24)),
     );
   }
 }
