@@ -58,57 +58,165 @@ class _MainScreenState extends State<MainScreen> {
   }
 }
 
-class ScreenOne extends StatelessWidget {
+class ScreenOne extends StatefulWidget {
   const ScreenOne({super.key});
 
   @override
+  State<ScreenOne> createState() => _ScreenOneState();
+}
+
+class _ScreenOneState extends State<ScreenOne> {
+  int counter = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Экран 1: Главная", style: TextStyle(fontSize: 24)),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Экран 1: Главная\nСчётчик: $counter", style: const TextStyle(fontSize: 24), textAlign: TextAlign.center),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                counter++;
+              });
+            },
+            child: const Text("Увеличить счётчик"),
+          ),
+        ],
+      ),
     );
   }
 }
 
-class ScreenTwo extends StatelessWidget {
+class ScreenTwo extends StatefulWidget {
   const ScreenTwo({super.key});
 
   @override
+  State<ScreenTwo> createState() => _ScreenTwoState();
+}
+
+class _ScreenTwoState extends State<ScreenTwo> {
+  bool isActive = false;
+
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Экран 2: Поиск", style: TextStyle(fontSize: 24)),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Экран 2: Поиск\nСтатус: ${isActive ? "Активен" : "Выключен"}", style: const TextStyle(fontSize: 24), textAlign: TextAlign.center),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                isActive = !isActive;
+              });
+            },
+            child: const Text("Переключить статус"),
+          ),
+        ],
+      ),
     );
   }
 }
 
-class ScreenThree extends StatelessWidget {
+class ScreenThree extends StatefulWidget {
   const ScreenThree({super.key});
 
   @override
+  State<ScreenThree> createState() => _ScreenThreeState();
+}
+
+class _ScreenThreeState extends State<ScreenThree> {
+  String text = "Список пуст";
+
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Экран 3: Список", style: TextStyle(fontSize: 24)),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Экран 3: Список\n$text", style: const TextStyle(fontSize: 24), textAlign: TextAlign.center),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                text = "Элемент добавлен!";
+              });
+            },
+            child: const Text("Добавить элемент"),
+          ),
+        ],
+      ),
     );
   }
 }
 
-class ScreenFour extends StatelessWidget {
+class ScreenFour extends StatefulWidget {
   const ScreenFour({super.key});
 
   @override
+  State<ScreenFour> createState() => _ScreenFourState();
+}
+
+class _ScreenFourState extends State<ScreenFour> {
+  String name = "Гость";
+
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Экран 4: Профиль", style: TextStyle(fontSize: 24)),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Экран 4: Профиль\nИмя: $name", style: const TextStyle(fontSize: 24), textAlign: TextAlign.center),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                name = "Студент";
+              });
+            },
+            child: const Text("Изменить имя"),
+          ),
+        ],
+      ),
     );
   }
 }
 
-class ScreenFive extends StatelessWidget {
+class ScreenFive extends StatefulWidget {
   const ScreenFive({super.key});
 
   @override
+  State<ScreenFive> createState() => _ScreenFiveState();
+}
+
+class _ScreenFiveState extends State<ScreenFive> {
+  double sliderValue = 0.0;
+
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Экран 5: Настройки", style: TextStyle(fontSize: 24)),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Экран 5: Настройки\nГромкость: ${sliderValue.toStringAsFixed(1)}", style: const TextStyle(fontSize: 24), textAlign: TextAlign.center),
+          Slider(
+            value: sliderValue,
+            min: 0,
+            max: 100,
+            divisions: 100,
+            label: sliderValue.toStringAsFixed(1),
+            onChanged: (value) {
+              setState(() {
+                sliderValue = value;
+              });
+            },
+          ),
+        ],
+      ),
     );
   }
 }
